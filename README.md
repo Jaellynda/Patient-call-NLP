@@ -5,7 +5,7 @@ This project builds an **NLP pipeline** to analyze synthetic patient call record
 It extracts common reasons for calls (e.g., appointments, prescriptions, symptoms), clusters them into topics,  
 and summarizes top patient concerns with LLMs.
 
-## ⚙️ What this project demonstrates
+## What this project demonstrates
 - Preprocessing text call records
 - Named Entity Recognition (NER) for medical-related terms
 - Topic modeling (LDA / BERTopic)
