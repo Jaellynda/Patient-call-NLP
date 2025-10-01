@@ -4,7 +4,7 @@ import re
 from collections import Counter
 
 # Make sure NLTK resources are available
-nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 
 # Load the dataset
 df = pd.read_csv("data/sample_calls.csv")
