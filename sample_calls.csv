@@ -1,0 +1,11 @@
+﻿call_id,patient_id,timestamp,transcript
+1,1001,2024-09-01T10:05:00Z,"""Hello, I need to reschedule my appointment with Dr. Lee next week."""
+2,1002,2024-09-01T11:20:00Z,"""My prescription for blood pressure meds ran out. Can I get a refill?"""
+3,1003,2024-09-02T09:15:00Z,"""I've been having headaches and nausea for two days. What should I do?"""
+4,1004,2024-09-03T14:00:00Z,"""I need instructions on how to take the new medication I was prescribed."""
+5,1005,2024-09-04T08:45:00Z,"""Is there a nurse line? I want to ask about my lab results."""
+6,1006,2024-09-05T18:45:00Z,"""I’ve been feeling dizzy lately. Should I be worried?"""
+7,1007,2024-09-06T08:35:00Z,"""Can I book an appointment for a physical examination?"""
+8,1008,2024-10-04T08:45:00Z,"""My test results came back, but I don’t understand the report. Can someone explain?"""
+9,1009,2024-10-05T06:15:00Z,"""I’m experiencing some pain in my lower back. Do I need to see a doctor?"""
+10,1010,2024-10-07T05:45:00Z,"""I think I have a cold. Should I take any medication or just rest?"""
