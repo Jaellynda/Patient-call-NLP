@@ -13,7 +13,7 @@ and summarizes top patient concerns with LLMs.
 - Optional: Expose results via a FastAPI endpoint
 
 ## 
-## 🚀 Running the Patient Call NLP API
+## Running the Patient Call NLP API
 
 This project includes a FastAPI service that lets you interact with the NLP pipeline through HTTP endpoints.
 
