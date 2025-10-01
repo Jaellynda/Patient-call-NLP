@@ -1,0 +1,14 @@
+pandas
+numpy
+scikit-learn
+nltk
+gensim
+sentence-transformers
+transformers
+torch
+umap-learn
+hdbscan
+bertopic
+fastapi
+uvicorn[standard]
+python-dotenv
