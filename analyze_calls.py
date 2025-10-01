@@ -1,24 +1,24 @@
+import os
+import sys
 import pandas as pd
 import nltk
 import re
 from collections import Counter
-import os
-import sys
 
 # -----------------------------
 # Offline-safe NLTK setup
 # -----------------------------
-# Local nltk_data folder in repo
+# Path to local nltk_data in repo
 LOCAL_NLTK_DIR = os.path.join(os.path.dirname(__file__), "nltk_data")
-nltk.data.path.append(LOCAL_NLTK_DIR)
+nltk.data.path.insert(0, LOCAL_NLTK_DIR)  # Insert at front so it is searched first
 
-# Correct resource name: 'punkt', not 'punkt_tab'
+# Verify punkt is available
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
     sys.exit(
-        "NLTK resource 'punkt' not found in local folder. \n"
-        "Please manually download it and place it in 'nltk_data/tokenizers/punkt/'"
+        "NLTK resource 'punkt' not found in local folder. "
+        "Ensure 'nltk_data/tokenizers/punkt/english.pickle' exists."
     )
 
 # -----------------------------
@@ -54,5 +54,6 @@ common_words = Counter(all_tokens).most_common(10)
 print("=== Most common words across transcripts ===")
 for word, freq in common_words:
     print(f"{word}: {freq}")
+
 
 
