@@ -4,19 +4,20 @@ import re
 from collections import Counter
 import os
 
-# -----------------------------
-# Offline-safe NLTK setup
-# -----------------------------
+
+
+# Use local nltk_data folder
 LOCAL_NLTK_DIR = os.path.join(os.path.dirname(__file__), "nltk_data")
-os.makedirs(LOCAL_NLTK_DIR, exist_ok=True)
 nltk.data.path.append(LOCAL_NLTK_DIR)
 
+# Check if punkt exists
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
-    print("Downloading 'punkt' to local nltk_data folder...")
-    nltk.download('punkt', download_dir=LOCAL_NLTK_DIR)
-
+    raise RuntimeError(
+        "NLTK 'punkt' not found in local folder. "
+        "Please download it manually as explained."
+    )
 # -----------------------------
 # Load dataset
 # -----------------------------
