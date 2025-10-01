@@ -3,25 +3,32 @@ import nltk
 import re
 from collections import Counter
 import os
+import sys
 
-
-
-# Use local nltk_data folder
+# -----------------------------
+# Offline-safe NLTK setup
+# -----------------------------
+# Local nltk_data folder in repo
 LOCAL_NLTK_DIR = os.path.join(os.path.dirname(__file__), "nltk_data")
 nltk.data.path.append(LOCAL_NLTK_DIR)
 
-# Check if punkt exists
+# Correct resource name: 'punkt', not 'punkt_tab'
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
-    raise RuntimeError(
-        "NLTK 'punkt' not found in local folder. "
-        "Please download it manually as explained."
+    sys.exit(
+        "NLTK resource 'punkt' not found in local folder. \n"
+        "Please manually download it and place it in 'nltk_data/tokenizers/punkt/'"
     )
+
 # -----------------------------
 # Load dataset
 # -----------------------------
-df = pd.read_csv("data/sample_calls.csv")
+csv_path = os.path.join(os.path.dirname(__file__), "data", "sample_calls.csv")
+if not os.path.exists(csv_path):
+    sys.exit(f"CSV file not found at {csv_path}")
+
+df = pd.read_csv(csv_path)
 
 print("=== Patient Call Dataset ===")
 print(f"Total calls: {len(df)}")
@@ -36,6 +43,7 @@ def preprocess_text(text):
     tokens = nltk.word_tokenize(text)
     return tokens
 
+# Apply preprocessing
 df["tokens"] = df["transcript"].apply(preprocess_text)
 
 # Flatten all tokens
